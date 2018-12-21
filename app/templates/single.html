@@ -10,8 +10,10 @@
             <div class="breadcrumbs d-flex flex-row align-items-center">
                 <ul>
                     <li><a href="/">Home</a></li>
-                    <li><a href="/categories"><i class="fa fa-angle-right" aria-hidden="true"></i>{{ product.category }}</a></li>
-                    <li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>{{ product.name }}</a></li>
+                    <li><a href="/categories"><i class="fa fa-angle-right" aria-hidden="true"></i>{{ product.category
+                            }}</a></li>
+                    <li class="active"><a href="#"><i class="fa fa-angle-right" aria-hidden="true"></i>{{ product.name
+                            }}</a></li>
                 </ul>
             </div>
 
@@ -75,13 +77,5 @@
 <!-- tabs -->
 {% include 'includes/singles/_tabs.html' %}
 <!-- tabs ENDS HERE-->
-
-<!-- Benefits -->
-{% include 'includes/_benefits.html' %}
-<!-- Benefits ENDS HERE-->
-
-<!-- Footer -->
-{% include 'includes/_footer.html' %}
-<!-- Footer ENDS HERE-->
 
 {% endblock %}

@@ -1,4 +1,28 @@
 from . import db
+from flask_bcrypt import generate_password_hash
+from flask_login import UserMixin
+
+class User(UserMixin,db.Model):
+    email = db.Column(db.String(100),primary_key=True)
+    name = db.Column(db.String(50))
+    credential = db.relationship('Credential',backref='user',uselist=False)
+
+    def __init__(self,email,name):
+        self.email = email
+        self.name = name
+
+    def get_id(self):
+        return self.email
+
+
+class Credential(db.Model):
+    email = db.Column(db.String(100),db.ForeignKey('user.email'),primary_key=True)
+    passCode = db.Column(db.String(60))
+
+    def __init__(self,email,passCode):
+        self.email = email
+        self.passCode = generate_password_hash(passCode)
+
 
 class Product(db.Model):
     id = db.Column(db.Integer,primary_key=True)
