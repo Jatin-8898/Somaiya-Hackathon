@@ -6,7 +6,6 @@
                 <div class="tabs_container">
                     <ul class="tabs d-flex flex-sm-row flex-column align-items-left align-items-md-center justify-content-center">
                         <li class="tab active" data-active-tab="tab_1"><span>Description</span></li>
-                        <li class="tab" data-active-tab="tab_2"><span>Additional Information</span></li>
                         <li class="tab" data-active-tab="tab_3"><span>Reviews (2)</span></li>
                     </ul>
                 </div>
@@ -50,20 +49,6 @@
                     </div>
                 </div>
 
-                <!-- Tab Additional Info -->
-
-                <div id="tab_2" class="tab_container">
-                    <div class="row">
-                        <div class="col additional_info_col">
-                            <div class="tab_title additional_info_title">
-                                <h4>Additional Information</h4>
-                            </div>
-                            <p>COLOR:<span>Gold, Red</span></p>
-                            <p>SIZE:<span>L,M,XL</span></p>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Tab Reviews -->
 
                 <div id="tab_3" class="tab_container">
@@ -78,50 +63,30 @@
 
                             <!-- User Review -->
 
+                            {% for review in reviews %}
                             <div class="user_review_container d-flex flex-column flex-sm-row">
                                 <div class="user">
                                     <div class="user_pic"></div>
                                     <div class="user_rating">
                                         <ul class="star_rating">
+                                        {% for i in range(review.rating) %}
                                             <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                        {% endfor %}
+                                        {% for i in range(5 - review.rating) %}
                                             <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                                        {% endfor %}
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="review">
-                                    <div class="review_date">27 Aug 2016</div>
+                                    <div class="review_date">{{ review.date }}</div>
                                     <div class="user_name">Brandon William</div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua.</p>
+                                    <p>{{ review.review_description }}</p>
                                 </div>
                             </div>
-
-                            <!-- User Review -->
-
-                            <div class="user_review_container d-flex flex-column flex-sm-row">
-                                <div class="user">
-                                    <div class="user_pic"></div>
-                                    <div class="user_rating">
-                                        <ul class="star_rating">
-                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                            <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="review">
-                                    <div class="review_date">27 Aug 2016</div>
-                                    <div class="user_name">Brandon William</div>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                                        incididunt ut labore et dolore magna aliqua.</p>
-                                </div>
                             </div>
-                        </div>
+                            {% endfor %}
+
 
                         <!-- Add Review -->
 

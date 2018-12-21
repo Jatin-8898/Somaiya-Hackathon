@@ -16,8 +16,8 @@ def categories():
 @app.route('/<string:category>/<string:name>')
 def single(category,name):
     product = Product.query.filter_by(category=category).filter_by(name=name).first()
-    #return product.name
-    return render_template('single.html',product=product)
+    reviews = product.reviews
+    return render_template('single.html',product=product,reviews=reviews)
 
 
 if __name__ == '__main__':
