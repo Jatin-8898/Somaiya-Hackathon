@@ -22,6 +22,7 @@ def single(category, name):
     product = Product.query.filter_by(
         category=category).filter_by(name=name).first()
     reviews = product.reviews
+    #return product.name
     return render_template('single.html', product=product, reviews=reviews)
 
 

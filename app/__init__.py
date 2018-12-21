@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 
 app.config['SECRET_KEY'] = "sarvesh"
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqldb://Jatin8898:kingjatin@localhost/ecommerce'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+mysqldb://root:sarvesh@localhost/ecommerce'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 login = LoginManager(app)

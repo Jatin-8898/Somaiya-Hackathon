@@ -15,10 +15,10 @@
     <ul class="list-group mb-3 z-depth-1">
         <li class="list-group-item d-flex justify-content-between lh-condensed">
             <div>
-                <h6 class="my-0">Product name</h6>
-                <small class="text-muted">Brief description</small>
+                <h6 class="my-0" id="name"></h6>
+                <small class="text-muted" id="description"></small>
             </div>
-            <span class="text-muted">$12</span>
+            <span class="text-muted" id="price"></span>
         </li>
         <li class="list-group-item d-flex justify-content-between lh-condensed">
             <div>
@@ -37,7 +37,7 @@
         <li class="list-group-item d-flex justify-content-between bg-light">
             <div class="text-success">
                 <h6 class="my-0">Promo code</h6>
-                <small>EXAMPLECODE</small>
+                <small>CHRISTMAS OFFER</small>
             </div>
             <span class="text-success">-$5</span>
         </li>
@@ -49,10 +49,18 @@
     <!-- Cart -->
 
     <div class="row">
-        <div class="red_button shop_now_button ml-3" style="width:420px"><a href="#">Checkout</a></div>
+        <div class="red_button shop_now_button ml-3" style="width:420px"><a href="/payment">Checkout</a></div>
 
     </div>
 
 
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#name").text(sessionStorage.getItem("name"));
+    $("#price").text(sessionStorage.getItem("price"));
+    $("#description").text(sessionStorage.getItem("description"));
+});
+</script>
 {% endblock %}
