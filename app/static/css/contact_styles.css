@@ -5,7 +5,7 @@
 
 COLOR PALETTE
 
-#FF6347 - (Tomato)
+#00BCD4 - (Tomato)
 #989898 - (Spanish Grey) - Text Color
 #F5F9F8 - (White Smoke) - Background Color
 
@@ -103,11 +103,11 @@ a, a:hover, a:visited, a:active, a:link
 p a:active
 {
 	position: relative;
-	color: #FF6347;
+	color: #00BCD4;
 }
 p a:hover
 {
-	color: #FF6347;
+	color: #00BCD4;
 	background: #fde0db;
 }
 p a:hover::after
@@ -117,7 +117,7 @@ p a:hover::after
 ::selection
 {
 	background: #fde0db;
-	color: #FF6347;
+	color: #00BCD4;
 }
 p::selection
 {
@@ -622,7 +622,7 @@ section
 	width: 20px;
 	height: 20px;
 	border-radius: 50%;
-	background: #fe4c50;
+	background: #00BCD4;
 	font-size: 12px;
 	color: #FFFFFF;
 }
@@ -814,7 +814,7 @@ section
 }
 .logo_container a span
 {
-	color: #fe4c50;
+	color: #00BCD4;
 }
 .red_button
 {
@@ -828,7 +828,7 @@ section
 	align-items: center;
 	width: auto;
 	height: 40px;
-	background: #fe4c50;
+	background: #00BCD4;
 	border-radius: 3px;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
@@ -878,7 +878,7 @@ section
 	transform: translateX(-50%);
 	width: 60px;
 	height: 5px;
-	background: #fe4c50;
+	background: #00BCD4;
 	content: '';
 }
 .product_details_title p
@@ -1223,7 +1223,7 @@ textarea:hover
 	width: 160px;
 	height: 46px;
 	border: none;
-	background: #fe4c50;
+	background: #00BCD4;
 	color: #FFFFFF;
 	font-size: 14px;
 	font-weight: 500;
@@ -1269,7 +1269,7 @@ textarea:hover
 }
 .footer_nav li a:hover, .cr a, .cr i
 {
-	color: #fe4c50;
+	color: #00BCD4;
 }
 .footer_social
 {
@@ -1300,5 +1300,5 @@ textarea:hover
 }
 .footer_social ul li a:hover
 {
-	color: #fe4c50;
+	color: #00BCD4;
 }

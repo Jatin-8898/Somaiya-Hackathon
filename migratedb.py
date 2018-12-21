@@ -7,7 +7,7 @@ date = datetime.now().strftime("%Y-%m-%d")
 db.drop_all()
 db.create_all()
 
-iphone = Product("IPhone","IPhone description","Phones",100)
+iphone = Product("Hoddy","Black hoody with yellow ","Clothing",674)
 laptop = Product("Laptop","Laptop description","Laptops",75)
 
 iphone_review1 = Review(1,"Very Nice",date,4)
