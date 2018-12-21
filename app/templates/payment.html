@@ -1,0 +1,25 @@
+{% extends 'includes/singles/layout.html' %}
+
+{% block body %}
+<div class="container single_product_container">
+    <div class="row">
+        <div class="mx-auto">
+            <div class="col-md-12 mt-5 pt-4 card border-secondary">
+                <div class="form-group">
+                    <label for="total_amount">Total Amount</label>
+                    <input type="number" name="total_amount" id="total_amount" class="form-control" disabled>
+
+                    <div class="red_button shop_now_button"><a href="#">Pay</a></div>
+                </div>
+
+                <hr>
+                <div class="form-group">
+                    <a href="/buy_token">Dont have tokens?? Buy tokens here!!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}

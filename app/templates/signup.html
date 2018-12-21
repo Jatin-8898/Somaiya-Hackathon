@@ -1,0 +1,73 @@
+{% extends 'includes/auth/layout.html' %}
+
+{% block body %}
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100 p-l-50 p-r-50 p-t-77 p-b-30">
+            <form class="login100-form validate-form">
+                <span class="login100-form-title p-b-25">
+                    Sign up here
+                </span>
+
+                <div class="text-center w-full p-t-5 p-b-10">
+                    <span class="txt1">
+                        Easily Using
+                    </span>
+                </div>
+
+                <a href="#" class="btn-face m-t-15">
+                    <i class="fa fa-facebook-official"></i>
+                    Facebook
+                </a>
+
+                <a href="#" class="btn-google m-t-15">
+                    <img src="/static/images/icons/icon-google.png" alt="GOOGLE">
+                    Google
+                </a>
+
+
+                <div class="wrap-input100 validate-input m-b-16 m-t-16" data-validate="Valid email is required: ex@abc.xyz">
+                    <input class="input100" type="text" name="email" placeholder="Email">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <span class="lnr lnr-envelope"></span>
+                    </span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-16" data-validate="Password is required">
+                    <input class="input100" type="password" name="pass" placeholder="Password">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <span class="lnr lnr-lock"></span>
+                    </span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-16" data-validate="Please Confirm Passwords">
+                    <input class="input100" type="password" name="pass" placeholder="Confirm Password">
+                    <span class="focus-input100"></span>
+                    <span class="symbol-input100">
+                        <span class="lnr lnr-lock"></span>
+                    </span>
+                </div>
+
+                <div class="container-login100-form-btn p-t-25">
+                    <button class="login100-form-btn">
+                        Sign up
+                    </button>
+                </div>
+
+                <div class="text-center w-full p-t-20">
+                    <span class="txt1">
+                        Already a User?
+                    </span>
+
+                    <a class="txt1 bo1 hov1" href="/login">
+                        Login Here
+                    </a>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
