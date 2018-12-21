@@ -1,0 +1,40 @@
+{% extends 'includes/categories/layout.html' %}
+
+{% block body %}
+<div class="container product_section_container">
+    <div class="row">
+        <div class="col product_section clearfix">
+
+            <!-- Breadcrumbs -->
+            {% include 'includes/categories/_breadcrumbs.html' %}
+            <!-- Breadcrumbs ENDS-->
+
+            <!-- Sidebar -->
+            {% include 'includes/categories/_sidebar.html' %}
+            <!-- Sidebar ENDS-->
+
+            <!-- Main Content -->
+            <div class="main_content">
+                <!-- Products -->
+                {% include 'includes/categories/_products.html' %}
+                <!-- Products ENDS-->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Benefits -->
+{% include 'includes/_benefits.html' %}
+<!-- Benefits ENDS HERE-->
+
+<!-- Newsletter -->
+{% include 'includes/_newsletter.html' %}
+<!-- Newsletter ENDS HERE-->
+
+<!-- Footer -->
+{% include 'includes/_footer.html' %}
+<!-- Footer ENDS HERE-->
+
+{% endblock %}
