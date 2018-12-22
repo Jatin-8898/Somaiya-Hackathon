@@ -1,15 +1,16 @@
 import os
 from app import app, db, google
 from app.models import *
-from flask import render_template, url_for, request, json, redirect
+from flask import render_template, url_for, request, json, redirect,session
 from flask_login import login_user, login_required, LoginManager,  logout_user, current_user
 import requests
+from flask_bcrypt import check_password_hash
 import json
 
 
 @app.route('/')
 def index():
-    return render_template('home.html', current_user=current_user)
+    return render_template('home.html', user=session['user'])
 
 
 @app.route('/categories')
@@ -41,13 +42,35 @@ def checkout():
     return render_template('checkout.html')
 
 
-@app.route('/login')
+@app.route('/login',methods=['GET','POST'])
 def login():
+    if(request.method == "POST"):
+        email = request.form['email']
+        password = request.form['password']
+        user = User.query.get(email)
+        if user and check_password_hash(user.credential.passCode,password):
+            session['user'] = user.name
+            return redirect(url_for('.index'))
+        else:
+            flash("Invalid email or passCode")
+            return redirect(url_for('.login'))
     return render_template('login.html')
 
 
-@app.route('/signup')
+@app.route('/signup',methods=['GET','POST'])
 def signup():
+    if(request.method == "POST"):
+        email = request.form['email']
+        fullName = request.form['fullName']
+        password = request.form['password']
+        newUser = User(email,fullName)
+        newCredential = Credential(email,password)
+        
+        db.session.add(newUser)
+        db.session.add(newCredential)
+
+        db.session.commit()
+        return redirect(url_for('.login'))
     return render_template('signup.html')
 
 
