@@ -77,17 +77,13 @@
 <!-- tabs -->
 {% include 'includes/singles/_tabs.html' %}
 <!-- tabs ENDS HERE-->
+
 <script type="text/javascript">
+var cart;
 function addToCart(){
-    var cart = sessionStorage.getItem("cart");
-    if(cart == null){
-        cart = [];
-    }
-    sessionStorage.clear();
-    cart[cart.length] = {name:"{{ product.name }}",description:"{{ product.description }}",price:"{{ product.price }}"};
-    sessionStorage.setItem("cart",cart);
-    var newCart = sessionStorage.getItem("cart");
-    console.log(newCart[0].name);
+    sessionStorage.setItem("name","{{ product.name }}");
+    sessionStorage.setItem("description","{{ product.description }}");
+    sessionStorage.setItem("price","{{ product.price }}");
 }
 </script>
 {% endblock %}

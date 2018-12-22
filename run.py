@@ -10,7 +10,9 @@ import json
 
 @app.route('/')
 def index():
-    return render_template('home.html', user=session['user'])
+    """ if(session['user']):
+        return render_template('home.html', user=session['user']) """
+    return render_template('home.html')
 
 
 @app.route('/categories')
@@ -56,6 +58,10 @@ def login():
             return redirect(url_for('.login'))
     return render_template('login.html')
 
+""" @app.route("/logout")
+def logout():
+    session.pop('user')
+    return redirect(url_for('.login')) """
 
 @app.route('/signup',methods=['GET','POST'])
 def signup():

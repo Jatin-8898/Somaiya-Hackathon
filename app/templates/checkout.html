@@ -13,6 +13,13 @@
 
     <!-- Cart -->
     <ul class="list-group mb-3 z-depth-1" id="cartList">
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <div>
+                <h6 class="my-0" id="name"></h6>
+                <small class="text-muted" id="description"></small>
+            </div>
+            <span class="text-muted" id="price"></span>
+        </li>
     </ul>
     <!-- Cart -->
 
@@ -26,27 +33,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>
 $(document).ready(function(){
-    /*$("#name").text(sessionStorage.getItem("name"));
+    $("#name").text(sessionStorage.getItem("name"));
     $("#price").text(sessionStorage.getItem("price"));
     $("#description").text(sessionStorage.getItem("description"));
-*/
-    var cart = sessionStorage.getItem("cart");
-    for(var i = 0;i < cart.length;i++){
-        $("#cartList").append(
-            "<li class='list-group-item d-flex justify-content-between lh-condensed'><div>"
-            +"<h6 class='my-0' id='name-"+i+"'></h6>"
-            +"<small class='text-muted' id='description-"+i+"'></small>"
-            +"</div>"
-            +"<span class='text-muted' id='price-"+i+"'></span>"
-            +"</li>"
-        );
-    }
-
-    for(var i = 0;i < cart.length;i++){
-        $("#name-"+i).html(cart[i].name);
-        $("#description-"+i).html(cart[i].description);
-        $("#price-"+i).html(cart[i].price);
-    }
 });
 </script>
 {% endblock %}
